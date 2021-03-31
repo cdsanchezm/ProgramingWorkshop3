@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Client {
 
-	public static void main(String[] args) {
+	public Client() {
 		Scanner scan = new Scanner(System.in);
 // the host and port variables are the connections for the server, they must be left the same in both the server class and the client class
 		String Host = "127.0.0.1";
@@ -77,36 +77,35 @@ public class Client {
 						String case1 = in.readUTF();
 						System.out.println(case1);
 
-						System.out.println("------------------------------------------------");
-						System.out.println("ingresa la especie del animal:");
+						System.out.println(Style(35, " > ingresa la especie del animal:"));
 						specie = scan.nextLine();
 						out.writeUTF(specie);
 
-						System.out.println("ingresa el tamaño del animal:");
+						System.out.println(Style(35, " > ingresa el tamaï¿½o del animal:"));
 						size = scan.nextLine();
 						out.writeUTF(size);
 
-						System.out.println("ingresa la localidad del animal:");
+						System.out.println(Style(35, " > ingresa la localidad del animal:"));
 						location = scan.nextLine();
 						out.writeUTF(location);
 
-						System.out.println("ingresa la direccion del animal:");
+						System.out.println(Style(35, " > ingresa la direccion del animal:"));
 						Address = scan.nextLine();
 						out.writeUTF(Address);
 
-						System.out.println("ingresa tu nombre completo:");
+						System.out.println(Style(35, " > ingresa tu nombre completo:"));
 						personName = scan.nextLine();
 						out.writeUTF(personName);
 
-						System.out.println("ingresa tu numero de celular:");
+						System.out.println(Style(35, " > ingresa tu numero de celular:"));
 						cellphone = scan.nextLine();
 						out.writeUTF(cellphone);
 
-						System.out.println("ingresa tu correo electronico:");
+						System.out.println(Style(35, " > ingresa tu correo electronico:"));
 						emailAddress = scan.nextLine();
 						out.writeUTF(emailAddress);
 
-						System.out.println("ingresa comentario general acerca de la situacion:");
+						System.out.println(Style(54, " > ingresa comentario general acerca de la situacion:"));
 						comentari = scan.nextLine();
 						out.writeUTF(comentari);
 
@@ -125,7 +124,7 @@ public class Client {
 						specie = scan.nextLine();
 						out.writeUTF(specie);
 
-						System.out.println("ingresa el tamaño del animal:");
+						System.out.println("ingresa el tamaï¿½o del animal:");
 						size = scan.nextLine();
 						out.writeUTF(size);
 
@@ -170,7 +169,7 @@ public class Client {
 						specie = scan.nextLine();
 						out.writeUTF(specie);
 
-						System.out.println("ingresa el tamaño del animal:");
+						System.out.println("ingresa el tamaï¿½o del animal:");
 						size = scan.nextLine();
 						out.writeUTF(size);
 
@@ -216,7 +215,7 @@ public class Client {
 						specie = scan.nextLine();
 						out.writeUTF(specie);
 
-						System.out.println("ingresa el tamaño del animal:");
+						System.out.println("ingresa el tamaï¿½o del animal:");
 						size = scan.nextLine();
 						out.writeUTF(size);
 
@@ -261,7 +260,7 @@ public class Client {
 						specie = scan.nextLine();
 						out.writeUTF(specie);
 
-						System.out.println("ingresa el tamaño del animal:");
+						System.out.println("ingresa el tamaï¿½o del animal:");
 						size = scan.nextLine();
 						out.writeUTF(size);
 
@@ -331,5 +330,36 @@ public class Client {
 		}
 
 	}
+	
+	public String Style(int numer, String Text) {
+		String a = "-";
+		String solution = "";
+		for (int i = 0; i < numer; i++) {
 
+			solution = solution + a;
+
+		}
+
+		solution = solution + "\n" + Text + "\n";
+
+		for (int i = 0; i < numer; i++) {
+
+			solution = solution + a;
+
+		}
+
+		return solution;
+	}
+
+	public String line(int numer) {
+		String a = "-";
+		String solution = "";
+		for (int i = 0; i < numer; i++) {
+
+			solution = solution + a;
+
+		}
+
+		return solution;
+	}
 }
