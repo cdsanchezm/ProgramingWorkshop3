@@ -2,12 +2,16 @@ package co.edu.unbosque.Controller;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -36,8 +40,10 @@ public class Server {
 	String emailAddress = "";
 	String comentari = "";
 	String typology = "";
+	String fecha = "";
 	boolean exitChat = false;
-
+	csv sv = new csv();
+    List<case_information>save = new ArrayList<case_information>();
 	public Server() {
 		try {
 			servidor = new ServerSocket(Puerto);
@@ -242,6 +248,8 @@ public class Server {
 				cellphone = in.readUTF();
 				emailAddress = in.readUTF();
 				comentari = in.readUTF();
+				fecha = in.readUTF();
+				
 
 				System.out.println(Style(30, " > informacion cargada <"));
 
@@ -256,6 +264,7 @@ public class Server {
 
 				out.writeUTF("Gracias por compartir esa informacion con nosotros\n" + line(64));
 				System.out.println(Style(64, saveCase()));
+				
 				// out.writeUTF(Style(64,saveCase()));
 				var = false;
 
@@ -268,10 +277,13 @@ public class Server {
 	public String saveCase() throws IOException {
 		String status = " > anithing ?";
 		try {
-			case_information save = new case_information(typology, specie, size, location, Address, personName,
-					cellphone, emailAddress, comentari);
-			if (!case_Info.contains(save)) {
-				case_Info.add(save);
+			case_information saves = new case_information(typology, specie, size, location, Address, personName,
+					cellphone, emailAddress, comentari,fecha);
+			save.add(new case_information(typology, specie, size, location, Address, personName, cellphone, emailAddress, comentari, fecha));
+			sv.exportCsv(save);
+			
+			if (!case_Info.contains(saves)) {
+				case_Info.add(saves);
 				status = " > Caso Creado Satisfactoriamente";
 
 			} else {
@@ -283,5 +295,7 @@ public class Server {
 		return status;
 
 	}
+	
+	
 
 }

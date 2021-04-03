@@ -5,6 +5,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Client {
@@ -30,7 +32,9 @@ public class Client {
 	String despedidac = "";
 	boolean exitChat = false;
 	String enunciado = "";
-
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	Date fecha = new Date();
+	String fechaCadena = sdf.format(fecha);
 	public Client() {
 
 		try {
@@ -229,6 +233,8 @@ public class Client {
 			System.out.println(Style(54, " > ingresa comentario general acerca de la situacion:"));
 			comentari = scan.nextLine();
 			out.writeUTF(comentari);
+			
+			out.writeUTF(fechaCadena);
 
 			caso = in.readUTF();
 			System.out.println(caso);

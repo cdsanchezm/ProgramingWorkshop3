@@ -1,5 +1,8 @@
 package co.edu.unbosque.Controller;
 
+import java.sql.Date;
+import java.util.Calendar;
+
 public class case_information {
 	
 	private String typology;
@@ -11,7 +14,7 @@ public class case_information {
 	private String telephone;
 	private String email;
 	private String comments;
-	
+	private String fecha;
 	/**
      * @param typology
 	 * @param species
@@ -22,9 +25,10 @@ public class case_information {
 	 * @param telephone
 	 * @param email
 	 * @param comments
+	 * @param calendario
 	 */
 	public case_information(String typology, String species, String size, String locality, String address,
-			String full_Name_Owner, String telephone, String email, String comments) {
+			String full_Name_Owner, String telephone, String email, String comments, String fecha) {
 		super();
 		this.typology = typology;
 		this.species = species;
@@ -35,7 +39,9 @@ public class case_information {
 		this.telephone = telephone;
 		this.email = email;
 		this.comments = comments;
+		this.fecha = fecha;
 	}
+	
 
 	/**
 	 * @return the typology
@@ -162,6 +168,20 @@ public class case_information {
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
+
+
+	public String getFecha() {
+		return fecha;
+	}
+
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+
+	
+	
 
     
 	
