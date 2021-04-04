@@ -2,18 +2,12 @@ package co.edu.unbosque.Controller;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
 
 public class Server {
 	// best way to save the case information to export csv file
@@ -190,7 +184,7 @@ public class Server {
 			out.writeUTF(Style(64,
 					"Bienvenido" + " " + nombre + " " + "me presento soy fernando, tu chatbot"
 							+ "\ncreado por esteban cardenas, paula anaya y cristian sanchez"
-							+ "\nfui dise�ado para hacer esta interaccion mas humana"
+							+ "\nfui disenado para hacer esta interaccion mas humana"
 							+ "\nen este momento te va a salir el menu de opciones"
 							+ "\ndonde nos puedes indicar mas afondo en que te podemos ayudar :3"));
 		} catch (IOException e) {

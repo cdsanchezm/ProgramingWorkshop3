@@ -1,13 +1,10 @@
 package co.edu.unbosque.Controller;
 
+import com.csvreader.CsvWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
-import com.csvreader.CsvWriter;
-import com.opencsv.CSVWriter;
 
 public class csv {
 
@@ -39,11 +36,7 @@ public class csv {
             outCSV.endRecord();
             colum = false;
 		}
-		
-			
-		
-			
-              
+
              //recorremos el arraylist y insertamos los datos
               
               for(case_information cases : save) {

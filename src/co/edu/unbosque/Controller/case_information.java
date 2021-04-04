@@ -1,8 +1,5 @@
 package co.edu.unbosque.Controller;
 
-import java.sql.Date;
-import java.util.Calendar;
-
 public class case_information {
 	
 	private String typology;
